@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Productos
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br>
+  <div class="container">
+  <ion-row>
+    <ion-col>Nombre:<ion-input [(ngModel)]="producto.nombre" id="txtNombre"
+        style="border: black solid 2px; font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+    <ion-col>Descripcion:<ion-input [(ngModel)]="producto.descripcion" id="txtDescripcion"
+        style="border: black solid 2px; font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+  </ion-row>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-row>
+    <ion-col>Precio:<ion-input [(ngModel)]="producto.precio" id="txtPrecio"
+      style="border: black solid 2px; font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+    <ion-col>STOCK<ion-input [(ngModel)]="producto.stock" id="txtStock"
+      style="border: black solid 2px; font-family: 'Times New Roman', Times, serif; font-size: 20px;"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    <ion-button (click)="agregarProducto();">Guardar <ion-icon name="save-outline"></ion-icon></ion-button>
+  </ion-col>
+  </ion-row>
+<hr>
+</div>
+  <ion-list>
+    <ion-list-header>
+      Lista de Productos
+    </ion-list-header>
+    <ion-item *ngFor="let producto of listaProductos">
+      <ion-avatar slot="start">
+        <img
+          src="https://1.bp.blogspot.com/-XdN0Kf19nJ8/WIpVQvbedZI/AAAAAAAAEcI/aZhbIUyKXcoQoRvDgmi3FM5_PQLDk-p4wCLcB/s1600/La%2Bmarca%2Bdel%2Bproducto%2BDefinici%25C3%25B3n%252C%2Bclasificaci%25C3%25B3n%252C%2Bc%25C3%25B3mo%2Bnacen%2By%2Bm%25C3%25A1s.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{producto.nombre}}</h2>
+        <h3>{{producto.descripcion}}</h3>
+        <p>{{producto.precio}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
