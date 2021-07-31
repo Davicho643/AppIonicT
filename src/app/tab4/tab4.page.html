@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Local</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder ="Enter ID" [(ngModel)]="key"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder ="Enter valor" [(ngModel)]="value"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col><ion-button expand="full" (click)="saveStorage()">Guardar</ion-button></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input [(ngModel)]="key" placeholder="Enter ID"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="full" (click)="getStorage()">Obtener</ion-button></ion-col>
+      <ion-col><ion-button expand="full" (click)="removeStorage()">Remover</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
